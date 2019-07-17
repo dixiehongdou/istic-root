@@ -11,5 +11,9 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="module_url" jdbcType="VARCHAR" property="moduleUrl" />
+    <result column="function_list" jdbcType="VARCHAR" property="functionList" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
   </resultMap>
 </mapper>

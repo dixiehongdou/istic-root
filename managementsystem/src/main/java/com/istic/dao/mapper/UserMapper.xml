@@ -11,7 +11,6 @@
     <result column="usercode" jdbcType="VARCHAR" property="usercode" />
     <result column="mail" jdbcType="VARCHAR" property="mail" />
     <result column="department_id" jdbcType="INTEGER" property="departmentId" />
-    <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="password" jdbcType="VARCHAR" property="password" />

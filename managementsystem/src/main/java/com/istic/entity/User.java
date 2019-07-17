@@ -44,11 +44,11 @@ public class User {
     @Column(name = "department_id")
     private Integer departmentId;
 
-    /**
-     * 角色id
-     */
-    @Column(name = "role_id")
-    private Integer roleId;
+    @Column(name = "create_time")
+    private Date createTime;
+
+    @Column(name = "update_time")
+    private Date updateTime;
 
     private String password;
 

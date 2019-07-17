@@ -31,4 +31,25 @@ public class Modules {
     private Date updateTime;
 
     private Byte status;
+
+    @Column(name = "order_id")
+    private Integer orderId;
+
+    /**
+     * 模块地址
+     */
+    @Column(name = "module_url")
+    private String moduleUrl;
+
+    /**
+     * 功能点列表
+     */
+    @Column(name = "function_list")
+    private String functionList;
+
+    /**
+     * 父模块id
+     */
+    @Column(name = "parent_id")
+    private Integer parentId;
 }

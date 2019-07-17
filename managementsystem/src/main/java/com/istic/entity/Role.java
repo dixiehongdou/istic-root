@@ -1,5 +1,6 @@
 package com.istic.entity;
 
+import java.util.Date;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,4 +20,17 @@ public class Role {
 
     @Column(name = "role_name")
     private String roleName;
+
+    /**
+     * 角色描述
+     */
+    private String description;
+
+    /**
+     * 创建者
+     */
+    private String creator;
+
+    @Column(name = "create_time")
+    private Date createTime;
 }
