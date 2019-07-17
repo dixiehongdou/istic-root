@@ -63,8 +63,7 @@ public class JournalOrder {
     private Byte status;
 
     /**
-     * 联系电话
+     * 份数
      */
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    private Integer amount;
 }
