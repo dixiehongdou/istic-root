@@ -17,4 +17,22 @@ import lombok.NoArgsConstructor;
 public class BusinessCardTemplate {
     @Id
     private Integer id;
+
+    private String name;
+
+    /**
+     * 单价
+     */
+    private Long price;
+
+    /**
+     * 模版地址
+     */
+    @Column(name = "template_url")
+    private String templateUrl;
+
+    /**
+     * 状态
+     */
+    private Byte status;
 }

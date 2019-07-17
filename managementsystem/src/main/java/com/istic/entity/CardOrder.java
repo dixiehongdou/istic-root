@@ -59,4 +59,15 @@ public class CardOrder {
 
     @Column(name = "apply_username")
     private String applyUsername;
+
+    /**
+     * 销卡/补卡原因
+     */
+    private String reason;
+
+    /**
+     * 照片地址
+     */
+    @Column(name = "picture_url")
+    private String pictureUrl;
 }

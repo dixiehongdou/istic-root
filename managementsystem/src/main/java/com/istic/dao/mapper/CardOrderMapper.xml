@@ -15,5 +15,7 @@
     <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
     <result column="apply_usercode" jdbcType="VARCHAR" property="applyUsercode" />
     <result column="apply_username" jdbcType="VARCHAR" property="applyUsername" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
   </resultMap>
 </mapper>
