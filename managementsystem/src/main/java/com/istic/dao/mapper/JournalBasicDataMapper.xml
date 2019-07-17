@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.JournalBasicDataMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.JournalBasicData">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="journal_name" jdbcType="VARCHAR" property="journalName" />
+    <result column="journal_number" jdbcType="VARCHAR" property="journalNumber" />
+    <result column="journal_date" jdbcType="VARCHAR" property="journalDate" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="annual_fee" jdbcType="DECIMAL" property="annualFee" />
+    <result column="journal_type" jdbcType="TINYINT" property="journalType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+</mapper>

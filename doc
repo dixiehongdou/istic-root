@@ -1,0 +1,7 @@
+eureka-server 注册中心
+gateway-server 网关
+managementsystem 应用服务
+
+
+第三方api调用 RestTemplate
+redis 操作 RedisTemplate

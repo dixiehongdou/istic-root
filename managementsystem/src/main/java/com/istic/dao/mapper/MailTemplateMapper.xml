@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.MailTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.MailTemplate">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="mail_type" jdbcType="TINYINT" property="mailType" />
+    <result column="mail_title" jdbcType="VARCHAR" property="mailTitle" />
+    <result column="mail_content" jdbcType="VARCHAR" property="mailContent" />
+    <result column="steps" jdbcType="VARCHAR" property="steps" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+</mapper>

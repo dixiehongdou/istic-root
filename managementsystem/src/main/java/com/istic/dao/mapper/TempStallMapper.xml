@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.TempStallMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.TempStall">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column=" id" jdbcType="INTEGER" property="id" />
+    <result column="reservation_user_code" jdbcType="VARCHAR" property="reservationUserCode" />
+    <result column="reservation_user_name" jdbcType="VARCHAR" property="reservationUserName" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="use_date" jdbcType="TIMESTAMP" property="useDate" />
+    <result column="use_time" jdbcType="TINYINT" property="useTime" />
+    <result column="car_number" jdbcType="VARCHAR" property="carNumber" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+</mapper>
