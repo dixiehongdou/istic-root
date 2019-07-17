@@ -10,6 +10,9 @@
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="com.istic.util.TkMapper"/>
         </plugin>
+        <plugin type="com.istic.util.LombokPlugin" >
+            <property name="hasLombok" value="true"/>
+        </plugin>
         <commentGenerator>
             <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
@@ -27,6 +30,7 @@
 
         <javaClientGenerator targetPackage="com.istic.dao" targetProject="/Users/hch/IdeaProjects/istic-root/managementsystem/src/main/java"
                              type="XMLMAPPER"/>
+
 
         <table tableName="%"></table>
     </context>

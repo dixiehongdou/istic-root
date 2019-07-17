@@ -1,40 +1,23 @@
 package com.istic.entity;
 
 import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+/**
+* Created by Mybatis Generator on 2019/07/17
+*/
 @Table(name = "role_resource")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RoleResource {
     @Column(name = "role_id")
     private Integer roleId;
 
     @Column(name = "resource_id")
     private Integer resourceId;
-
-    /**
-     * @return role_id
-     */
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    /**
-     * @param roleId
-     */
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    /**
-     * @return resource_id
-     */
-    public Integer getResourceId() {
-        return resourceId;
-    }
-
-    /**
-     * @param resourceId
-     */
-    public void setResourceId(Integer resourceId) {
-        this.resourceId = resourceId;
-    }
 }
