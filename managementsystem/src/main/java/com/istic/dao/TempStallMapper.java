@@ -4,7 +4,7 @@ import com.istic.entity.TempStall;
 import com.istic.util.TkMapper;
 
 /**
-* Created by Mybatis Generator on 2019/07/17
+* Created by Mybatis Generator on 2019/07/18
 */
 public interface TempStallMapper extends TkMapper<TempStall> {
 }

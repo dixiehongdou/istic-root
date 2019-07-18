@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2019/07/17
+* Created by Mybatis Generator on 2019/07/18
 */
 @Table(name = "mail_template")
 @Data

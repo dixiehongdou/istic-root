@@ -10,46 +10,48 @@ import lombok.NoArgsConstructor;
 /**
 * Created by Mybatis Generator on 2019/07/18
 */
-@Table(name = "journal_order")
+@Table(name = "go_out_apply")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class JournalOrder {
+public class GoOutApply {
     @Id
     private Integer id;
 
     /**
-     * 预订人Code
+     * 员工Code
      */
-    @Column(name = "reservation_usercode")
-    private String reservationUsercode;
+    private String usercode;
+
+    private String username;
+
+    @Column(name = "department_id")
+    private Integer departmentId;
 
     /**
-     * 预订人姓名
+     * 外出开始时间
      */
-    @Column(name = "reservation_username")
-    private String reservationUsername;
-
-    /**
-     * 订单编号
-     */
-    @Column(name = "order_number")
-    private String orderNumber;
-
     @Column(name = "start_time")
     private Date startTime;
 
     /**
-     * 年费
+     * 外出结束时间
      */
     @Column(name = "end_time")
     private Date endTime;
 
     /**
-     * 部门
+     * 时长
      */
-    private String department;
+    private Double duration;
+
+    private String reason;
+
+    /**
+     * 审批人
+     */
+    private String approver;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -61,9 +63,4 @@ public class JournalOrder {
      * 状态
      */
     private Byte status;
-
-    /**
-     * 份数
-     */
-    private Integer amount;
 }

@@ -10,33 +10,26 @@ import lombok.NoArgsConstructor;
 /**
 * Created by Mybatis Generator on 2019/07/18
 */
+@Table(name = "attendance_record")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Notice {
+public class AttendanceRecord {
     @Id
     private Integer id;
 
-    /**
-     * 公告名称
-     */
-    @Column(name = "notice_name")
-    private String noticeName;
-
-    @Column(name = "create_time")
-    private Date createTime;
+    private String username;
 
     /**
-     * 操作人
+     * 上班打卡时间
      */
-    private String operator;
-
-    @Column(name = "update_time")
-    private Date updateTime;
+    @Column(name = "punch_in_time")
+    private Date punchInTime;
 
     /**
-     * 发布内容
+     * 下班打卡时间
      */
-    private String content;
+    @Column(name = "punch_out_time")
+    private Date punchOutTime;
 }
