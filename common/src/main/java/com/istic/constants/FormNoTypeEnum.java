@@ -9,11 +9,11 @@ import lombok.Data;
 public enum FormNoTypeEnum {
 
     //会议室
-    HY_ORDER("HY", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 7, 20),
+    HY_ORDER("HY", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 4, 20),
     //报刊
-    BK_ORDER("BK", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 7, 20),
+    BK_ORDER("BK", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 4, 20),
     //名片
-    MP_ORDER("MP", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 7, 20),;
+    MP_ORDER("MP", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 4, 20),;
 
     /**
      * 单号前缀

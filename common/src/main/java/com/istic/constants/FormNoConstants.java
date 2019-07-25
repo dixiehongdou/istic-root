@@ -7,7 +7,7 @@ public class FormNoConstants {
     /**
      * 单号流水号缓存Key前缀
      */
-    public static final String SERIAL_CACHE_PREFIX = "FORM_NO_CACHE_";
+    public static final String SERIAL_CACHE_PREFIX = "FORM_NO_CACHE:";
 
     /**
      * 单号流水号yyMMdd前缀
