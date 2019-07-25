@@ -9,5 +9,15 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="punch_in_time" jdbcType="TIMESTAMP" property="punchInTime" />
     <result column="punch_out_time" jdbcType="TIMESTAMP" property="punchOutTime" />
+    <result column="depart_id" jdbcType="INTEGER" property="departId" />
+    <result column="status_am" jdbcType="TINYINT" property="statusAm" />
+    <result column="status_pm" jdbcType="TINYINT" property="statusPm" />
+    <result column="working_hours" jdbcType="DOUBLE" property="workingHours" />
+    <result column="attendance_type" jdbcType="VARCHAR" property="attendanceType" />
+    <result column="overtime_hours" jdbcType="DOUBLE" property="overtimeHours" />
+    <result column="leave_hours" jdbcType="DOUBLE" property="leaveHours" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="is_go_out" jdbcType="TINYINT" property="isGoOut" />
+    <result column="usercode" jdbcType="VARCHAR" property="usercode" />
   </resultMap>
 </mapper>

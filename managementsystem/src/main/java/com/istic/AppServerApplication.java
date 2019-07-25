@@ -25,7 +25,7 @@ public class AppServerApplication implements  CommandLineRunner{
     @Override
     public void run(String... strings) throws Exception {
         String s1 = formNoGenerateService.generateFormNo(FormNoTypeEnum.HY_ORDER);
-        String s2 = formNoGenerateService.generateFormNo(FormNoTypeEnum.QJ_ORDER);
+        String s2 = formNoGenerateService.generateFormNo(FormNoTypeEnum.MP_ORDER);
         System.out.println(s1);
         System.out.println(s2);
     }

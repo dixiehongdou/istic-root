@@ -4,7 +4,7 @@ import com.istic.entity.BusinessCardOrder;
 import com.istic.util.TkMapper;
 
 /**
-* Created by Mybatis Generator on 2019/07/18
+* Created by Mybatis Generator on 2019/07/25
 */
 public interface BusinessCardOrderMapper extends TkMapper<BusinessCardOrder> {
 }
