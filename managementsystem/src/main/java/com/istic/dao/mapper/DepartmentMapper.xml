@@ -12,4 +12,7 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="creator" jdbcType="VARCHAR" property="creator" />
   </resultMap>
+  <select id="selectDepartsByName" resultType="com.istic.entity.Department" parameterType="java.lang.String">
+    SELECT * FROM department  d WHERE d.department_name LIKE CONCAT('%',#{departName},'%') ORDER BY id
+  </select>
 </mapper>

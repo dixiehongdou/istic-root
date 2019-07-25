@@ -31,7 +31,7 @@ public class RoleController {
     }
 
     @GetMapping("/api/selectRolesByName")
-    @ApiOperation(value = "修改角色")
+    @ApiOperation(value = "角色查询列表")
     public Result selectRolesByName(@RequestParam String roleName) {
         return roleService.selectRolesByName(roleName);
     }
