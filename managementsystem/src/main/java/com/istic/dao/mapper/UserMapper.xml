@@ -15,5 +15,8 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="attendance_type" jdbcType="INTEGER" property="attendanceType" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="channel" jdbcType="INTEGER" property="channel" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
   </resultMap>
 </mapper>

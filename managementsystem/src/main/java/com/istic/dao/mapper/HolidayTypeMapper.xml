@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.HolidayTypeMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.HolidayType">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name_cn" jdbcType="VARCHAR" property="nameCn" />
+    <result column="name_en" jdbcType="VARCHAR" property="nameEn" />
+    <result column="value_add" jdbcType="VARCHAR" property="valueAdd" />
+    <result column="note_cn" jdbcType="VARCHAR" property="noteCn" />
+    <result column="note_en" jdbcType="VARCHAR" property="noteEn" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+</mapper>

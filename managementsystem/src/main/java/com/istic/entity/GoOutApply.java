@@ -22,10 +22,15 @@ public class GoOutApply {
     /**
      * 员工Code
      */
-    private String usercode;
+    @Column(name = "apply_usercode")
+    private String applyUsercode;
 
-    private String username;
+    @Column(name = "apply_username")
+    private String applyUsername;
 
+    /**
+     * 部门id
+     */
     @Column(name = "department_id")
     private Integer departmentId;
 
@@ -41,17 +46,13 @@ public class GoOutApply {
     @Column(name = "end_time")
     private Date endTime;
 
-    /**
-     * 时长
-     */
-    private Double duration;
-
     private String reason;
 
     /**
      * 审批人
      */
-    private String approver;
+    @Column(name = "approver_usercode")
+    private String approverUsercode;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -63,4 +64,13 @@ public class GoOutApply {
      * 状态
      */
     private Byte status;
+
+    @Column(name = "approver_username")
+    private String approverUsername;
+
+    /**
+     * 订单号
+     */
+    @Column(name = "order_id")
+    private String orderId;
 }
