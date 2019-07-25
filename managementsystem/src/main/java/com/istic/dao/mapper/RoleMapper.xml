@@ -11,4 +11,8 @@
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
+
+  <select id="selectRolesByName" parameterType="java.lang.String" resultType="com.istic.entity.Role">
+    SELECT * FROM role  r WHERE r.role_name LIKE  CONCAT('%',#{roleName},'%') ORDER BY id
+  </select>
 </mapper>
