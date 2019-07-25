@@ -7,16 +7,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2019/07/18
+* Created by Mybatis Generator on 2019/07/25
 */
+@Table(name = "role_modles")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Resources {
-    @Id
-    private Integer id;
+public class RoleModles {
+    @Column(name = "role_id")
+    private Integer roleId;
 
-    @Column(name = "resource_name")
-    private String resourceName;
+    @Column(name = "resource_id")
+    private Integer resourceId;
 }

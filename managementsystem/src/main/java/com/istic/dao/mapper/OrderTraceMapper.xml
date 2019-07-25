@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.OrderTraceMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.OrderTrace">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="operator" jdbcType="VARCHAR" property="operator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="result" jdbcType="VARCHAR" property="result" />
+    <result column="idea" jdbcType="VARCHAR" property="idea" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+  </resultMap>
+</mapper>
