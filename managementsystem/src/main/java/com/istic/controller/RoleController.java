@@ -5,6 +5,7 @@ import com.istic.entity.vo.AddRole;
 import com.istic.entity.vo.AddUser;
 import com.istic.entity.vo.UpdateRole;
 import com.istic.service.RoleService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by hch on 2019/7/25.
  */
 @RestController
+@Api(tags = "角色相关接口")
 public class RoleController {
     @Autowired
     RoleService roleService;

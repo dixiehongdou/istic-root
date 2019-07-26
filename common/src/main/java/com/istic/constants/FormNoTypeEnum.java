@@ -12,6 +12,8 @@ public enum FormNoTypeEnum {
     HY_ORDER("HY", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 4, 20),
     //报刊
     BK_ORDER("BK", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 4, 20),
+    //请假
+    QJ_ORDER("QJ", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 4, 20),
     //名片
     MP_ORDER("MP", FormNoConstants.SERIAL_YYYYMMDD_PREFIX, 4, 20),;
 
