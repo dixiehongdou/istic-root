@@ -3,6 +3,7 @@ package com.istic.service.impl;
 import com.istic.base.BaseService;
 import com.istic.base.Result;
 import com.istic.dao.DepartmentMapper;
+import com.istic.dao.OrderTraceMapper;
 import com.istic.entity.Department;
 import com.istic.entity.Role;
 import com.istic.entity.vo.AddDepart;
@@ -22,8 +23,11 @@ public class DepartMentServiceImpl extends BaseService implements DepartMentServ
     @Autowired
     DepartmentMapper departmentMapper;
 
+
     @Autowired
     DozerBeanMapper dozerBeanMapper;
+
+
 
     @Override
     public Result addDepart(AddDepart addDepart) {

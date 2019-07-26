@@ -44,4 +44,7 @@ public class AddLeaveOrder {
     @NotNull(message = "部门id不能为空")
     @ApiModelProperty(value = "部门id")
     private Integer departmentId;
+    @NotNull(message = "操作人不能为空")
+    @ApiModelProperty(value = "操作人")
+    private String operator;
 }
