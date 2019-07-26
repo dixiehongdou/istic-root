@@ -13,4 +13,6 @@ public interface LeaveOrderService {
     Result addLeaveOrder(AddLeaveOrder addLeaveOrder);
 
     Result iLeaveOrder(String operator, String type, Date startTime, Date endTime, Byte status);
+
+    Result leaveOrder(Integer id);
 }

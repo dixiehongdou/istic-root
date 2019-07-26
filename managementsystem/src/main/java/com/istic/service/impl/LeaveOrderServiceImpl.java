@@ -1,5 +1,6 @@
 package com.istic.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import com.istic.base.BaseService;
 import com.istic.base.Result;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by hch on 2019/7/26.
@@ -60,5 +62,15 @@ public class LeaveOrderServiceImpl extends BaseService implements LeaveOrderServ
         mapWithExpectedSize.put("type", type);
         mapWithExpectedSize.put("status", status);
         return leaveOrderMapper.iLeaveOrder(mapWithExpectedSize);
+    }
+
+    @Override
+    public Result leaveOrder(Integer id) {
+        LeaveOrder leaveOrder = leaveOrderMapper.selectByPrimaryKey(id);
+        List<OrderTrace> orderTraceList = orderTraceMapper.select(OrderTrace.builder().orderId(id).build());
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("leaveOrder", leaveOrder);
+        jsonObject.put("leaveOrder", orderTraceList);
+        return success("").setData(jsonObject);
     }
 }

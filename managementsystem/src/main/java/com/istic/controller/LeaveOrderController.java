@@ -36,4 +36,10 @@ public class LeaveOrderController {
             , @RequestParam("status") Byte status) {
         return leaveOrderService.iLeaveOrder(operator, type, startTime, endTime, status);
     }
+
+    @GetMapping("/api/leaveOrder")
+    @ApiOperation(value = "请假详情")
+    public Result leaveOrder(@RequestParam("id") Integer id) {
+        return leaveOrderService.leaveOrder(id);
+    }
 }
