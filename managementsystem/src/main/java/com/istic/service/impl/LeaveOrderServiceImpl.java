@@ -1,5 +1,6 @@
 package com.istic.service.impl;
 
+import com.google.common.collect.Maps;
 import com.istic.base.BaseService;
 import com.istic.base.Result;
 import com.istic.constants.FormNoTypeEnum;
@@ -14,6 +15,9 @@ import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Created by hch on 2019/7/26.
@@ -45,5 +49,16 @@ public class LeaveOrderServiceImpl extends BaseService implements LeaveOrderServ
             return success("");
         }
         return error("");
+    }
+
+    @Override
+    public Result iLeaveOrder(String operator, String type, Date startTime, Date endTime, Byte status) {
+        HashMap<String, Object> mapWithExpectedSize = Maps.newHashMapWithExpectedSize(8);
+        mapWithExpectedSize.put("operator", operator);
+        mapWithExpectedSize.put("startTime", startTime);
+        mapWithExpectedSize.put("endTime", endTime);
+        mapWithExpectedSize.put("type", type);
+        mapWithExpectedSize.put("status", status);
+        return leaveOrderMapper.iLeaveOrder(mapWithExpectedSize);
     }
 }

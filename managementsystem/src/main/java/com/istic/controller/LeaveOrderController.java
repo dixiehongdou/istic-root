@@ -9,9 +9,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * Created by hch on 2019/7/26.
@@ -27,5 +27,13 @@ public class LeaveOrderController {
     @ApiOperation(value = "申请假期")
     public Result addLeaveOrer(@RequestBody @Validated AddLeaveOrder addLeaveOrder) {
         return leaveOrderService.addLeaveOrder(addLeaveOrder);
+    }
+
+    @GetMapping("/api/iLeaveOrder")
+    @ApiOperation(value = "我的请假")
+    public Result iLeaveOrder(@RequestParam("operator") String operator, @RequestParam("type") String type
+            , @RequestParam("startTime") Date startTime, @RequestParam("endTime") Date endTime
+            , @RequestParam("status") Byte status) {
+        return leaveOrderService.iLeaveOrder(operator, type, startTime, endTime, status);
     }
 }
