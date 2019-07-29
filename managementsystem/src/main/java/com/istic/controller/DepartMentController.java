@@ -22,21 +22,21 @@ public class DepartMentController {
     @Autowired
     DepartMentService departMentService;
 
-    @PostMapping("/api/addRole")
+    @PostMapping("/api/addDepart")
     @ApiOperation(value = "添加部门")
     public Result addDepart(@RequestBody @Validated AddDepart addDepart) {
         return departMentService.addDepart(addDepart);
     }
 
-    @PutMapping("/api/updateRole")
+    @PutMapping("/api/updateDepart")
     @ApiOperation(value = "修改部门")
-    public Result updateRole(@RequestBody @Validated UpdateDepart updateDepart) {
+    public Result updateDepart(@RequestBody @Validated UpdateDepart updateDepart) {
         return departMentService.updateDepart(updateDepart);
     }
 
     @GetMapping("/api/selectDepartsByName")
     @ApiOperation(value = "查询部门列表")
-    public Result selectDepartsByName(@RequestParam String departName) {
+    public Result selectDepartsByName(@RequestParam @Validated  String departName) {
         return departMentService.selectDepartsByName(departName);
     }
 
