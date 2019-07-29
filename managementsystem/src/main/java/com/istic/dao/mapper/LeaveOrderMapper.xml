@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.istic.dao.LeaveOrderMapper">
-    <resultMap id="BaseResultMap" type="com.istic.entity.LeaveOrder">
-        <!--
-          WARNING - @mbg.generated
-        -->
-        <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="order_id" jdbcType="VARCHAR" property="orderId"/>
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
-        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
-        <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
-        <result column="type" jdbcType="INTEGER" property="type"/>
-        <result column="apply_usercode" jdbcType="VARCHAR" property="applyUsercode"/>
-        <result column="apply_username" jdbcType="VARCHAR" property="applyUsername"/>
-        <result column="status" jdbcType="TINYINT" property="status"/>
-        <result column="reason" jdbcType="VARCHAR" property="reason"/>
-        <result column="phone" jdbcType="VARCHAR" property="phone"/>
-        <result column="attachment" jdbcType="VARCHAR" property="attachment"/>
-        <result column="approver_usercode" jdbcType="VARCHAR" property="approverUsercode"/>
-        <result column="approver_username" jdbcType="VARCHAR" property="approverUsername"/>
-        <result column="department_id" jdbcType="INTEGER" property="departmentId"/>
-    </resultMap>
-    <select id="iLeaveOrder" resultType="com.istic.entity.LeaveOrder" parameterType="java.util.HashMap">
+  <resultMap id="BaseResultMap" type="com.istic.entity.LeaveOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="apply_usercode" jdbcType="VARCHAR" property="applyUsercode" />
+    <result column="apply_username" jdbcType="VARCHAR" property="applyUsername" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="attachment" jdbcType="VARCHAR" property="attachment" />
+    <result column="approver_usercode" jdbcType="VARCHAR" property="approverUsercode" />
+    <result column="approver_username" jdbcType="VARCHAR" property="approverUsername" />
+    <result column="department_id" jdbcType="INTEGER" property="departmentId" />
+  </resultMap>
+    <select id="iLeaveOrder" parameterType="java.util.HashMap" resultType="com.istic.entity.LeaveOrder">
         SELECT *
         FROM leave_order l
         WHERE l.apply_usercode = #{operator}

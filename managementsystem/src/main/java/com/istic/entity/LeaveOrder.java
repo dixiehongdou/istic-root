@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2019/07/25
+* Created by Mybatis Generator on 2019/07/29
 */
 @Table(name = "leave_order")
 @Data
@@ -20,7 +20,7 @@ public class LeaveOrder {
     private Integer id;
 
     /**
-     * 
+     * 订单号
 订单号
      */
     @Column(name = "order_id")

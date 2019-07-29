@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2019/07/25
+* Created by Mybatis Generator on 2019/07/29
 */
 @Table(name = "role_modles")
 @Data

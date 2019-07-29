@@ -4,7 +4,7 @@ import com.istic.entity.Modules;
 import com.istic.util.TkMapper;
 
 /**
-* Created by Mybatis Generator on 2019/07/25
+* Created by Mybatis Generator on 2019/07/29
 */
 public interface ModulesMapper extends TkMapper<Modules> {
 }
