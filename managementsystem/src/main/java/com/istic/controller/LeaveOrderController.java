@@ -3,6 +3,7 @@ package com.istic.controller;
 import com.istic.base.Result;
 import com.istic.entity.vo.AddDepart;
 import com.istic.entity.vo.AddLeaveOrder;
+import com.istic.entity.vo.UpdateStatus;
 import com.istic.service.DepartMentService;
 import com.istic.service.LeaveOrderService;
 import io.swagger.annotations.Api;
@@ -41,5 +42,11 @@ public class LeaveOrderController {
     @ApiOperation(value = "请假详情")
     public Result leaveOrder(@RequestParam("id") Integer id) {
         return leaveOrderService.leaveOrder(id);
+    }
+
+    @PutMapping("/api/updateStatus")
+    @ApiOperation(value = "请假审核")
+    public Result updateStatus(@RequestBody UpdateStatus updateStatus) {
+        return leaveOrderService.updateStatus(updateStatus);
     }
 }

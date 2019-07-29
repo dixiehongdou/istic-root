@@ -10,6 +10,7 @@ import com.istic.dao.OrderTraceMapper;
 import com.istic.entity.LeaveOrder;
 import com.istic.entity.OrderTrace;
 import com.istic.entity.vo.AddLeaveOrder;
+import com.istic.entity.vo.UpdateStatus;
 import com.istic.service.FormNoGenerateService;
 import com.istic.service.LeaveOrderService;
 import org.dozer.DozerBeanMapper;
@@ -72,5 +73,40 @@ public class LeaveOrderServiceImpl extends BaseService implements LeaveOrderServ
         jsonObject.put("leaveOrder", leaveOrder);
         jsonObject.put("leaveOrder", orderTraceList);
         return success("").setData(jsonObject);
+    }
+
+    @Override
+    @Transactional
+    public Result updateStatus(UpdateStatus updateStatus) {
+        LeaveOrder map = dozerBeanMapper.map(updateStatus, LeaveOrder.class);
+        int i = leaveOrderMapper.updateByPrimaryKey(map);
+        OrderTrace build = OrderTrace.builder().operator(updateStatus.getOperator()).result(result(updateStatus.getStatus())).build();
+        orderTraceMapper.insertSelective(build);
+        if (i > 0) {
+            return success("");
+        }
+        return error("");
+    }
+
+    private String result(Byte status) {
+        String result = "";
+        switch (status) {
+            case 0:
+                result = "待审批";
+                break;
+            case 1:
+                result = "审批通过";
+                break;
+            case 2:
+                result = "已撤回";
+                break;
+            case 3:
+                result = "审批未通过";
+                break;
+            case 4:
+                result = "已退回";
+                break;
+        }
+        return result;
     }
 }

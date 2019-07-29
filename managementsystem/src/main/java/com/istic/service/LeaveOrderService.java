@@ -2,6 +2,7 @@ package com.istic.service;
 
 import com.istic.base.Result;
 import com.istic.entity.vo.AddLeaveOrder;
+import com.istic.entity.vo.UpdateStatus;
 
 import java.util.Date;
 
@@ -15,4 +16,6 @@ public interface LeaveOrderService {
     Result iLeaveOrder(String operator, String type, Date startTime, Date endTime, Byte status);
 
     Result leaveOrder(Integer id);
+
+    Result updateStatus(UpdateStatus updateStatus);
 }
