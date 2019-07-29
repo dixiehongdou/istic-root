@@ -13,6 +13,7 @@
         <module>gateway-server</module>
         <module>common</module>
         <module>managementsystem</module>
+        <module>integrationsystem</module>
     </modules>
 
     <parent>

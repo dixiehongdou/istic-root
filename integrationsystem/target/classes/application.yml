@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: integration-server
+  profiles:
+    active: dev
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+server:
+  port: 9093
+  tomcat:
+    max-http-post-size: 102400000
+mybatis:
+  mapperLocations: classpath:com/istic/dao/mapper/*Mapper.xml
+  typeAliasesPackage: com.istic.entity
+  configuration:
+    mapUnderscoreToCamelCase: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  helper-dialect: mysql
+  reasonable: false
+  support-methods-arguments: false
+  params: count=countSql
+mapper:
+  mappers: com.istic.util.TkMapper
+  not-empty: false
+  i-d-e-n-t-i-t-y: MYSQL
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      zone-1: http://localhost:9091/eureka/

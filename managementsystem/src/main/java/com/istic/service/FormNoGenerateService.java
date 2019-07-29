@@ -7,5 +7,4 @@ import com.istic.constants.FormNoTypeEnum;
  */
 public interface FormNoGenerateService {
     String generateFormNo(FormNoTypeEnum formNoTypeEnum);
-
 }
