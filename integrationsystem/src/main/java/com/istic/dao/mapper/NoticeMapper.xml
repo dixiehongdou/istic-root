@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.NoticeMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.Notice">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="category_id" jdbcType="VARCHAR" property="categoryId" />
+    <result column="subject" jdbcType="VARCHAR" property="subject" />
+    <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
+    <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="hits" jdbcType="INTEGER" property="hits" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <select id="getNoticeByCount" parameterType="java.lang.Integer" resultType="com.istic.entity.Notice">
+    SELECT * FROM notice  order  by sort limit #{count};
+  </select>
+  <select id="getDetailsById" parameterType="java.lang.String" resultType="com.istic.entity.Notice">
+    SELECT * FROM notice where id=#{id};
+  </select>
+</mapper>

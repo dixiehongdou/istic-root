@@ -20,8 +20,8 @@ import java.util.List;
 public class GenMain {
     public static void main(String[] args) {
         ArrayList<String> warnings = Lists.newArrayList();
-        boolean overwrite = true;//如果已经生成过了是否进行覆盖
-        String genCfg = "/Users/hch/IdeaProjects/istic-root/managementsystem/src/main/resources/generator/generatorConfig.xml";
+        boolean overwrite = false;//如果已经生成过了是否进行覆盖
+        String genCfg = "D:\\Work\\Java\\istic-root\\integrationsystem\\src\\main\\resources\\generator\\generatorConfig.xml";
 
         File configFile = new File(genCfg);
         ConfigurationParser cfgParser = new ConfigurationParser(warnings);//配置文件解析器

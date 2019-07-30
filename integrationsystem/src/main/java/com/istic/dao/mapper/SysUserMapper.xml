@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.SysUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="fullname" jdbcType="VARCHAR" property="fullname" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="addr" jdbcType="VARCHAR" property="addr" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="pwdedit" jdbcType="INTEGER" property="pwdedit" />
+    <result column="pwdoverdue" jdbcType="INTEGER" property="pwdoverdue" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="pan" jdbcType="VARCHAR" property="pan" />
+    <result column="postid" jdbcType="INTEGER" property="postid" />
+    <result column="email_password" jdbcType="VARCHAR" property="emailPassword" />
+    <result column="panuse" jdbcType="VARCHAR" property="panuse" />
+    <result column="email_username" jdbcType="VARCHAR" property="emailUsername" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="mac" jdbcType="VARCHAR" property="mac" />
+  </resultMap>
+</mapper>

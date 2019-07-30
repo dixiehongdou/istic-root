@@ -34,9 +34,9 @@ public class AlipayOrder {
 
     @Column(name = "product_code")
     private String productCode;
-
+    @Column(name = "code")
     private String code;
-
+    @Column(name = "msg")
     private String msg;
 
     @Column(name = "userCode")

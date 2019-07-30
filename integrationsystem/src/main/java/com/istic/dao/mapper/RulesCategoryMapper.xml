@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.RulesCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.RulesCategory">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="superior_Id" jdbcType="VARCHAR" property="superiorId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+  </resultMap>
+</mapper>

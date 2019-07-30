@@ -19,16 +19,16 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://120.27.69.126:3306/istic"
+                        connectionURL="jdbc:mysql://120.27.69.126:3306/istic-oa"
                         userId="root"
                         password="MyNewPass4!">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.istic.entity" targetProject="/Users/hch/IdeaProjects/istic-root/managementsystem/src/main/java"/>
+        <javaModelGenerator targetPackage="com.istic.entity" targetProject="D:\Work\Java\istic-root\integrationsystem\src\main\java"/>
 
-        <sqlMapGenerator targetPackage="com.istic.dao.mapper" targetProject="/Users/hch/IdeaProjects/istic-root/managementsystem/src/main/java"/>
+        <sqlMapGenerator targetPackage="com.istic.dao.mapper" targetProject="D:\Work\Java\istic-root\integrationsystem\src\main\java"/>
 
-        <javaClientGenerator targetPackage="com.istic.dao" targetProject="/Users/hch/IdeaProjects/istic-root/managementsystem/src/main/java"
+        <javaClientGenerator targetPackage="com.istic.dao" targetProject="D:\Work\Java\istic-root\integrationsystem\src\main\java"
                              type="XMLMAPPER"/>
 
 
