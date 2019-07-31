@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class NoticeController {
     @Autowired
     NoticeService noticeService;
-    @GetMapping("/api/list")
+    @GetMapping("/api/notice/list")
     @ApiOperation(value = "通知公告列表")
     public Result getNoticeByCount(@RequestParam Integer count) {
         return noticeService.getNoticeByCount(count);
     }
-    @GetMapping("/api/details")
+    @GetMapping("/api/notice/details")
     @ApiOperation(value = "通知详情")
     public Result getDetailsById(@RequestParam String id) {
         return noticeService.getDetailsById(id);

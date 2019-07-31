@@ -18,7 +18,5 @@
   <select id="getNoticeByCount" parameterType="java.lang.Integer" resultType="com.istic.entity.Notice">
     SELECT * FROM notice  order  by sort limit #{count};
   </select>
-  <select id="getDetailsById" parameterType="java.lang.String" resultType="com.istic.entity.Notice">
-    SELECT * FROM notice where id=#{id};
-  </select>
+
 </mapper>

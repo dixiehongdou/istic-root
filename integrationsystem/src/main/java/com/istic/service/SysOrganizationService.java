@@ -1,18 +1,16 @@
-package com.istic.dao;
+package com.istic.service;
 
 import com.istic.entity.SysOrganization;
-import com.istic.util.TkMapper;
 
 /**
-* Created by Mybatis Generator on 2019/07/30
-*/
-public interface SysOrganizationMapper extends TkMapper<SysOrganization> {
+ * @Author: sunwy
+ * @Date: 2019/7/31 11:57
+ */
+public interface SysOrganizationService {
     /**
      * 根据部门名称查找部门详细信息
      * @param deptName
      * @return
      */
     SysOrganization getSysOrganizationByName(String deptName);
-
 }
-

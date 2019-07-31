@@ -46,3 +46,7 @@ eureka:
     fetchRegistry: false
     service-url:
       zone-1: http://localhost:9091/eureka/
+
+sso:
+  oaLoginUrl: https://mail.istic.ac.cn/coremail/index.jsp?uid=%s&password=%s&action:login=%s
+  scientificResearchLoginUrl: http://168.160.19.73/?username=%s

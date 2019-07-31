@@ -15,4 +15,7 @@
     <result column="category_id" jdbcType="VARCHAR" property="categoryId" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
   </resultMap>
+  <select id="getDownloadList" parameterType="java.lang.Integer" resultType="com.istic.entity.Download">
+    select  * from  download order  by sort limit #{count};
+  </select>
 </mapper>

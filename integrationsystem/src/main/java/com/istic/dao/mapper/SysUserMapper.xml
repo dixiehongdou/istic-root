@@ -26,4 +26,7 @@
     <result column="ip" jdbcType="VARCHAR" property="ip" />
     <result column="mac" jdbcType="VARCHAR" property="mac" />
   </resultMap>
+  <select id="getUserByName" parameterType="java.lang.String" resultType="com.istic.entity.SysUser">
+    select  * from  sys_user where username=#{username};
+  </select>
 </mapper>

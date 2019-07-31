@@ -17,11 +17,4 @@ public interface NoticeMapper extends TkMapper<Notice> {
      * @return
      */
     List<Notice> getNoticeByCount(Integer count);
-
-    /**
-     * 查看详情
-     * @param id
-     * @return
-     */
-    Notice getDetailsById(String id);
 }

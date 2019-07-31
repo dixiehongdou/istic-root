@@ -15,4 +15,7 @@
     <result column="sort" jdbcType="INTEGER" property="sort" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
+  <select id="getRulesByCount" parameterType="java.lang.Integer" resultType="com.istic.entity.Rules">
+    select  * from  rules order by sort limit #{count};
+  </select>
 </mapper>

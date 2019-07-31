@@ -18,6 +18,7 @@ import java.util.List;
 public class NoticeServiceImpl extends BaseService implements NoticeService {
     @Autowired
     NoticeMapper noticeMapper;
+
     @Override
     public Result getNoticeByCount(Integer count) {
         List<Notice> notices = noticeMapper.getNoticeByCount(count);
@@ -27,8 +28,8 @@ public class NoticeServiceImpl extends BaseService implements NoticeService {
 
     @Override
     public Result getDetailsById(String id) {
-       Notice notice= noticeMapper.getDetailsById(id);
-       Result result=success("查询成功").setCode(0).setData(notice);
-       return  result;
+        Notice notice = noticeMapper.selectByPrimaryKey(id);
+        Result result = success("查询成功").setCode(0).setData(notice);
+        return result;
     }
 }
