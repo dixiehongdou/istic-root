@@ -13,18 +13,18 @@
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="apply_usercode" jdbcType="VARCHAR" property="applyUsercode" />
     <result column="apply_username" jdbcType="VARCHAR" property="applyUsername" />
-    <result column="status" jdbcType="TINYINT" property="status" />
     <result column="reason" jdbcType="VARCHAR" property="reason" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="attachment" jdbcType="VARCHAR" property="attachment" />
     <result column="approver_usercode" jdbcType="VARCHAR" property="approverUsercode" />
     <result column="approver_username" jdbcType="VARCHAR" property="approverUsername" />
     <result column="department_id" jdbcType="INTEGER" property="departmentId" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+
   </resultMap>
-    <select id="iLeaveOrder" parameterType="java.util.HashMap" resultType="com.istic.entity.LeaveOrder">
-        SELECT *
-        FROM leave_order l
-        WHERE l.apply_usercode = #{operator}
+    <select id="iLeaveOrder" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+        SELECT * FROM leave_order l LEFT JOIN leave_order_status ls ON l.id=ls.leave_order_id
+        WHERE ls.username = #{operator}
         <if test="startTime!=null">
             AND l.create_time &gt;= #{startTime}
         </if>
@@ -35,7 +35,8 @@
             AND l.type = #{type}
         </if>
         <if test="status!=null">
-            AND ` status `= #{status}
+            AND ls.`status`= #{status}
         </if>
     </select>
+
 </mapper>

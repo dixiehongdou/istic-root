@@ -33,7 +33,7 @@ public class LeaveOrderController {
     @GetMapping("/api/iLeaveOrder")
     @ApiOperation(value = "我的请假")
     public Result iLeaveOrder(@RequestParam("operator") String operator, @RequestParam("type") String type
-            , @RequestParam("startTime") Date startTime, @RequestParam("endTime") Date endTime
+            , @RequestParam("startTime") Long startTime, @RequestParam("endTime") Long endTime
             , @RequestParam("status") Byte status) {
         return leaveOrderService.iLeaveOrder(operator, type, startTime, endTime, status);
     }

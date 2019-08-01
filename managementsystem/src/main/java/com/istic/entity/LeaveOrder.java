@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class LeaveOrder {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /**
@@ -53,11 +54,6 @@ public class LeaveOrder {
     private String applyUsername;
 
     /**
-     * 审批状态  0 待审批 1审批通过  2已撤回  3 审批未通过 4已退回
-     */
-    private Byte status;
-
-    /**
      * 请假原因
      */
     private String reason;
@@ -91,4 +87,8 @@ public class LeaveOrder {
      */
     @Column(name = "department_id")
     private Integer departmentId;
+    /**
+     * 状态
+     */
+    private Byte status;
 }
