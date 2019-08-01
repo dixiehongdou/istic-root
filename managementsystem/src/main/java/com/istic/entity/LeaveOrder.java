@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class LeaveOrder {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /**
@@ -86,4 +87,8 @@ public class LeaveOrder {
      */
     @Column(name = "department_id")
     private Integer departmentId;
+    /**
+     * 状态
+     */
+    private Byte status;
 }

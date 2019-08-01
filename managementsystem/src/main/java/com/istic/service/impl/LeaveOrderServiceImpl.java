@@ -70,14 +70,15 @@ public class LeaveOrderServiceImpl extends BaseService implements LeaveOrderServ
 
 
     @Override
-    public Result iLeaveOrder(String operator, String type, Date startTime, Date endTime, Byte status) {
+    public Result iLeaveOrder(String operator, String type, Long startTime, Long endTime, Byte status) {
         HashMap<String, Object> mapWithExpectedSize = Maps.newHashMapWithExpectedSize(8);
         mapWithExpectedSize.put("operator", operator);
-        mapWithExpectedSize.put("startTime", startTime);
-        mapWithExpectedSize.put("endTime", endTime);
+        mapWithExpectedSize.put("startTime", new Date(startTime));
+        mapWithExpectedSize.put("endTime", new Date(endTime));
         mapWithExpectedSize.put("type", type);
         mapWithExpectedSize.put("status", status);
-        return leaveOrderMapper.iLeaveOrder(mapWithExpectedSize);
+        List<LeaveOrder> leaveOrderList = leaveOrderMapper.iLeaveOrder(mapWithExpectedSize);
+        return success("").setData(leaveOrderList);
     }
 
     @Override
