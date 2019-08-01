@@ -14,6 +14,8 @@ import javax.validation.constraints.NotNull;
 @Data
 @ApiModel(value = "OA用户")
 public class AddSysUserVo {
+    @ApiModelProperty(value = "用户id")
+    private  String id;
     @NotNull(message = "用户名不能为空")
     @ApiModelProperty(value = "用户名")
     private String username;

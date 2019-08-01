@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2019/7/31 16:21
  */
 @RestController
-@Api(tags = "同步用户到OA接口")
+@Api(tags = "单点登录接口")
 public class SSOController {
 
     @Autowired

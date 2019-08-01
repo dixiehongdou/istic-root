@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.istic.dao.AlipayOrderMapper">
+  <resultMap id="BaseResultMap" type="com.istic.entity.AlipayOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="out_trade_no" jdbcType="VARCHAR" property="outTradeNo" />
+    <result column="subject" jdbcType="VARCHAR" property="subject" />
+    <result column="body" jdbcType="VARCHAR" property="body" />
+    <result column="total_amount" jdbcType="VARCHAR" property="totalAmount" />
+    <result column="time_express" jdbcType="VARCHAR" property="timeExpress" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="msg" jdbcType="VARCHAR" property="msg" />
+    <result column="userCode" jdbcType="VARCHAR" property="usercode" />
+    <result column="dt" jdbcType="TIMESTAMP" property="dt" />
+  </resultMap>
+</mapper>
