@@ -13,7 +13,6 @@
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="apply_usercode" jdbcType="VARCHAR" property="applyUsercode" />
     <result column="apply_username" jdbcType="VARCHAR" property="applyUsername" />
-    <result column="status" jdbcType="TINYINT" property="status" />
     <result column="reason" jdbcType="VARCHAR" property="reason" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="attachment" jdbcType="VARCHAR" property="attachment" />

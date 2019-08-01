@@ -1,13 +1,16 @@
 package com.istic.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.istic.base.BaseService;
 import com.istic.base.Result;
 import com.istic.constants.FormNoTypeEnum;
 import com.istic.dao.LeaveOrderMapper;
+import com.istic.dao.LeaveOrderStatusMapper;
 import com.istic.dao.OrderTraceMapper;
 import com.istic.entity.LeaveOrder;
+import com.istic.entity.LeaveOrderStatus;
 import com.istic.entity.OrderTrace;
 import com.istic.entity.vo.AddLeaveOrder;
 import com.istic.entity.vo.UpdateStatus;
@@ -18,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -33,6 +37,8 @@ public class LeaveOrderServiceImpl extends BaseService implements LeaveOrderServ
 
     @Autowired
     OrderTraceMapper orderTraceMapper;
+    @Autowired
+    LeaveOrderStatusMapper leaveOrderStatusMapper;
 
     @Autowired
     DozerBeanMapper dozerBeanMapper;
@@ -46,6 +52,7 @@ public class LeaveOrderServiceImpl extends BaseService implements LeaveOrderServ
         String orderId = formNoGenerateService.generateFormNo(FormNoTypeEnum.QJ_ORDER);
         map.setOrderId(orderId);
         int i = leaveOrderMapper.insertSelective(map);
+        insertLeaveOrderStatus(map.getId(), addLeaveOrder.getApplyUsercode(), addLeaveOrder.getApproverUsercode());
         OrderTrace build = OrderTrace.builder().operator(addLeaveOrder.getOperator()).result("订单提交").build();
         orderTraceMapper.insertSelective(build);
         if (i > 0) {
@@ -53,6 +60,14 @@ public class LeaveOrderServiceImpl extends BaseService implements LeaveOrderServ
         }
         return error("");
     }
+
+    private void insertLeaveOrderStatus(Integer leaveOrderId, String applyUsercode, String approverUsercode) {
+        LeaveOrderStatus applyUsercodeStatus = LeaveOrderStatus.builder().username(applyUsercode).leaveOrderId(leaveOrderId).build();
+        LeaveOrderStatus approverUsercodeStatus = LeaveOrderStatus.builder().username(approverUsercode).leaveOrderId(leaveOrderId).build();
+        leaveOrderStatusMapper.insertSelective(applyUsercodeStatus);
+        leaveOrderStatusMapper.insertSelective(approverUsercodeStatus);
+    }
+
 
     @Override
     public Result iLeaveOrder(String operator, String type, Date startTime, Date endTime, Byte status) {
