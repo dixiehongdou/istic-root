@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @ApiModel(value = "支付宝支付")
-public class PayByAli {
+public class PayInfo {
 
     @NotNull(message = "商户订单号不能为空")
     @ApiModelProperty(value = "商户订单号")

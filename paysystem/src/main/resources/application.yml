@@ -46,3 +46,15 @@ eureka:
     fetchRegistry: false
     service-url:
       zone-1: http://localhost:9091/eureka/
+pay:
+  wx:
+    appid: wx1d96c6yxxc0d192a
+    mchid: 1519719912
+    key: A6nvI8Xp6A6nvI8Xp6A6nvI8Xp6
+    notifyURL: https://xxx.com/wxpay/notify
+    certPath: /data/cert/wx/apiclient_cert.p12
+    certPassword: 1517923901
+  ali:
+    appid: 2019138363328891
+    privateKey: MIIEuwIBADANBgkqhkiG9w...
+    notifyURL: https://xxx.com/alipay/notify

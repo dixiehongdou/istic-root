@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2019/08/01
+* Created by Mybatis Generator on 2019/08/02
 */
 @Table(name = "alipay_order")
 @Data

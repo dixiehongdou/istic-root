@@ -10,7 +10,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @Author: sunwy
  * @Date: 2019/8/1 9:46
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={"com.istic", "org.yangyuan"})
 @EnableTransactionManagement
 @MapperScan("com.istic.dao")
 @EnableFeignClients

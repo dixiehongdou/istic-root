@@ -11,8 +11,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.yangyuan.pay.bean.AliPayNoticeInfo;
 import org.yangyuan.pay.bean.TradeStatus;
+import org.yangyuan.pay.bean.WxPayNoticeInfo;
 import org.yangyuan.pay.core.NoticeManagers;
 import org.yangyuan.pay.core.PayManagers;
 import org.yangyuan.pay.core.common.AbstractPayManager;
@@ -23,45 +23,43 @@ import java.util.Map;
 
 /**
  * @Author: sunwy
- * @Date: 2019/8/2 17:19
+ * @Date: 2019/8/2 19:12
  */
 @RestController
-@Api(tags = "支付宝支付")
+@Api(tags = "微信支付")
 @Slf4j
-public class AliPayController {
-
+public class WxPayController {
     @Autowired
     GoodsTradeService goodsTradeService;
 
-
-    @PostMapping("/api/aliPay")
-    @ApiOperation(value = "支付宝支付")
+    @PostMapping("/api/wxPay")
+    @ApiOperation(value = "微信支付")
     public String pay(@RequestBody @Validated PayInfo payInfo) {
-        log.info("发起支付宝支付：" + JSON.toJSONString(payInfo));
+        log.info("发起微信支付：" + JSON.toJSONString(payInfo));
         String result = goodsTradeService.pay(payInfo);
-        log.info("发起支付宝支付结果：" + result);
-        return result;
+        log.info("发起微信支付结果："+result);
+        return  result;
 
     }
-
     @PostMapping(value = "/notify")
-    @ApiOperation("异步通知")
-    public void notify(HttpServletRequest request, HttpServletResponse response) {
+    @ApiOperation(value = "微信支付异步回调")
+    public void notify(HttpServletRequest request, HttpServletResponse response){
     /*
         解析请求参数
      */
-        Map<String, String> params = NoticeManagers.getDefaultManager().receiveAliParams(request);
+        Map<String, String> params = NoticeManagers.getDefaultManager().receiveWxParams(request);
 
     /*
         封装
      */
-        AliPayNoticeInfo info = new AliPayNoticeInfo();
+        WxPayNoticeInfo info = new WxPayNoticeInfo();
         TradeStatus status = NoticeManagers.getDefaultManager().execute(params, info);
-        log.info("微信支付异步回调地址：" + JSON.toJSONString(info));
+
+        log.info("微信支付异步回调地址："+ JSON.toJSONString(info));
     /*
         持久化回调数据
      */
-        //TODO: 强烈建议将AliPayNoticeInfo持久化到数据库中，以备不时之需，当然你也可以忽略
+        //TODO: 强烈建议将WxPayNoticeInfo持久化到数据库中，以备不时之需，当然你也可以忽略
 
     /*
         业务分发
@@ -72,6 +70,6 @@ public class AliPayController {
     /*
         响应
      */
-        NoticeManagers.getDefaultManager().sendAliResponse(response);
+        NoticeManagers.getDefaultManager().sendWxResponse(response);
     }
 }
