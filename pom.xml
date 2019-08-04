@@ -14,8 +14,6 @@
         <module>common</module>
         <module>managementsystem</module>
         <module>integrationsystem</module>
-        <module>paysystem</module>
-        <module>pay-spring-boot</module>
     </modules>
 
     <parent>
